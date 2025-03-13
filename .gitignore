@@ -1,0 +1,7 @@
+# Ignore .cursor folder
+.cursor/
+
+# Other common files to ignore
+.DS_Store
+node_modules/
+*.log 
