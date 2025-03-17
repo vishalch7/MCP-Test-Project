@@ -17,7 +17,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            background: linear-gradient(135deg, #6ab7ff 0%, #3461ff 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,7 +53,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, #f6d365, #fda085);
+            background: linear-gradient(90deg, #6ab7ff, #3461ff);
             border-radius: 2px;
         }
 
@@ -88,23 +88,24 @@
             color: #f6d365;
         }
 
-        .button {
+        .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            background: linear-gradient(90deg, #6ab7ff, #3461ff);
             color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            padding: 12px 24px;
+            border-radius: 30px;
             text-decoration: none;
-            margin-top: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 97, 255, 0.3);
+            margin: 10px;
+            border: none;
+            cursor: pointer;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 97, 255, 0.4);
         }
 
         .text-center {
@@ -138,7 +139,7 @@
         </ul>
 
         <div class="text-center">
-            <a href="index.html" class="button">Back to Home</a>
+            <a href="index.html" class="btn">Back to Home</a>
         </div>
     </div>
 </body>

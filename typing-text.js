@@ -44,9 +44,9 @@ class TypingTextAnimation {
             this.cursorElement.style.display = 'inline-block';
             this.cursorElement.style.marginLeft = '2px';
             this.cursorElement.style.animation = `cursor-blink ${this.options.cursorBlinkSpeed}ms infinite`;
-            this.cursorElement.style.color = '#f6d365';
+            this.cursorElement.style.color = '#6ab7ff';
             this.cursorElement.style.fontWeight = 'bold';
-            this.cursorElement.style.textShadow = '0 0 5px rgba(246, 211, 101, 0.5)';
+            this.cursorElement.style.textShadow = '0 0 5px rgba(52, 97, 255, 0.5)';
             
             // Add cursor blink animation if not already added
             if (!document.querySelector('#typing-animations-style')) {
@@ -69,8 +69,8 @@ class TypingTextAnimation {
                     }
                     
                     @keyframes pulse-glow {
-                        0%, 100% { box-shadow: 0 0 10px rgba(246, 211, 101, 0.3); }
-                        50% { box-shadow: 0 0 20px rgba(253, 160, 133, 0.5); }
+                        0%, 100% { box-shadow: 0 0 10px rgba(52, 97, 255, 0.3); }
+                        50% { box-shadow: 0 0 20px rgba(52, 97, 255, 0.5); }
                     }
                 `;
                 document.head.appendChild(style);
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     banner.style.width = '100%';
     banner.style.background = 'rgba(255, 255, 255, 0.85)';
     banner.style.backdropFilter = 'blur(8px)';
-    banner.style.borderBottom = '2px solid rgba(246, 211, 101, 0.5)';
+    banner.style.borderBottom = '2px solid rgba(52, 97, 255, 0.5)';
     banner.style.color = '#333';
     banner.style.padding = '12px 0';
     banner.style.textAlign = 'center';
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = document.createElement('span');
     icon.innerHTML = '✨';
     icon.style.fontSize = '1.2rem';
-    icon.style.color = '#fda085';
+    icon.style.color = '#3461ff';
     icon.style.animation = 'rotate-icon 3s infinite linear';
     
     // Add icon rotation animation if not already added
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingElement = document.createElement('div');
     typingElement.id = 'typing-text';
     typingElement.style.display = 'inline-block';
-    typingElement.style.background = 'linear-gradient(90deg, #f6d365, #fda085)';
+    typingElement.style.background = 'linear-gradient(90deg, #6ab7ff, #3461ff)';
     typingElement.style.webkitBackgroundClip = 'text';
     typingElement.style.webkitTextFillColor = 'transparent';
     typingElement.style.backgroundClip = 'text';
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     closeButton.style.transform = 'translateY(-50%)';
     closeButton.style.background = 'none';
     closeButton.style.border = 'none';
-    closeButton.style.color = '#fda085';
+    closeButton.style.color = '#3461ff';
     closeButton.style.fontSize = '1.5rem';
     closeButton.style.cursor = 'pointer';
     closeButton.style.opacity = '0.7';

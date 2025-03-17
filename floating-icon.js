@@ -5,7 +5,7 @@ class FloatingIcon {
             iconType: options.iconType || 'star', // 'star', 'circle', 'triangle', 'custom'
             customSvg: options.customSvg || '',
             size: options.size || 60,
-            color: options.color || '#fda085',
+            color: options.color || '#3461ff',
             position: options.position || 'top-right', // 'top-left', 'top-right', 'bottom-left', 'bottom-right'
             margin: options.margin || 30,
             floatRange: options.floatRange || 15,
@@ -121,6 +121,27 @@ class FloatingIcon {
     }
     
     handleClick() {
+        // Create burst animation
+        if (!document.querySelector('#burst-animation')) {
+            const style = document.createElement('style');
+            style.id = 'burst-animation';
+            style.textContent = `
+                @keyframes burst {
+                    0% {
+                        transform: scale(1);
+                        opacity: 1;
+                        box-shadow: 0 0 0 0 rgba(52, 97, 255, 0.7);
+                    }
+                    100% {
+                        transform: scale(2);
+                        opacity: 0;
+                        box-shadow: 0 0 0 30px rgba(52, 97, 255, 0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
         // Create a burst animation on click
         const burst = document.createElement('div');
         burst.style.position = 'absolute';
@@ -133,19 +154,6 @@ class FloatingIcon {
         burst.style.backgroundColor = this.options.color;
         burst.style.opacity = '0.6';
         burst.style.animation = 'burst 0.6s ease-out forwards';
-        
-        // Add keyframes for burst animation if not already added
-        if (!document.querySelector('#burst-animation')) {
-            const style = document.createElement('style');
-            style.id = 'burst-animation';
-            style.textContent = `
-                @keyframes burst {
-                    0% { transform: translate(-50%, -50%) scale(0); opacity: 0.6; }
-                    100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-        }
         
         this.container.appendChild(burst);
         
@@ -165,12 +173,12 @@ class FloatingIcon {
 document.addEventListener('DOMContentLoaded', () => {
     new FloatingIcon({
         iconType: 'star',
-        color: '#fda085',
+        size: 50,
+        color: '#3461ff',
         position: 'top-right',
-        floatRange: 10,
-        rotationSpeed: 2,
-        onClick: () => {
-            alert('You clicked the floating star! ✨');
-        }
+        margin: 25,
+        floatRange: 12,
+        rotationSpeed: 3,
+        pulseIntensity: 0.08
     });
 }); 

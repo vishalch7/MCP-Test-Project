@@ -6,7 +6,7 @@ class ParticlesAnimation {
         this.particles = [];
         this.options = {
             count: options.count || 100,
-            color: options.color || '#f6d365',
+            color: options.color || '#6ab7ff',
             maxSize: options.maxSize || 5,
             speed: options.speed || 0.5,
             connectParticles: options.connectParticles || true,
@@ -74,19 +74,8 @@ class ParticlesAnimation {
     }
     
     getRandomColor() {
-        // Create variations of the base color
-        const baseColor = this.options.color;
-        const r = parseInt(baseColor.slice(1, 3), 16);
-        const g = parseInt(baseColor.slice(3, 5), 16);
-        const b = parseInt(baseColor.slice(5, 7), 16);
-        
-        // Add some randomness to the color
-        const variation = 30;
-        const newR = Math.min(255, Math.max(0, r + (Math.random() * variation - variation/2)));
-        const newG = Math.min(255, Math.max(0, g + (Math.random() * variation - variation/2)));
-        const newB = Math.min(255, Math.max(0, b + (Math.random() * variation - variation/2)));
-        
-        return `rgba(${newR}, ${newG}, ${newB}, ${Math.random() * 0.5 + 0.3})`;
+        const colors = ['#6ab7ff', '#3461ff', '#4f7cff', '#8ac4ff'];
+        return colors[Math.floor(Math.random() * colors.length)];
     }
     
     animate() {
@@ -135,13 +124,13 @@ class ParticlesAnimation {
     }
 }
 
-// Initialize the animation when the DOM is loaded
+// Initialize the particles animation when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new ParticlesAnimation({
         count: 80,
-        color: '#f6d365',
+        color: '#6ab7ff',
         maxSize: 4,
-        speed: 0.3,
-        connectDistance: 120
+        speed: 0.4,
+        connectDistance: 140
     });
 }); 
